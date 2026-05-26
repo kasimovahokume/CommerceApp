@@ -5,8 +5,13 @@ const BasketContext = createContext()
 export const BasketProvider = ({ children }) => {
 
   const [basket, setBasket] = useState(() => {
-    const saved = localStorage.getItem("basket")
-    return saved ? JSON.parse(saved) : []
+    try {
+      const saved = localStorage.getItem("basket")
+      if (!saved || saved === "undefined") return []
+      return JSON.parse(saved)
+    } catch {
+      return []
+    }
   })
 
   useEffect(() => {
@@ -46,21 +51,18 @@ export const BasketProvider = ({ children }) => {
   const totalPrice = basket.reduce(
     (sum, item) => sum + item.price * item.quantity, 0
   )
-
   const totalCount = basket.reduce((sum, item) => sum + item.quantity, 0)
 
   return (
-    <BasketContext.Provider
-      value={{
-        basket,
-        addToBasket,
-        decreaseQuantity,
-        removeFromBasket,
-        clearBasket,
-        totalPrice,
-        totalCount,
-      }}
-    >
+    <BasketContext.Provider value={{
+      basket,
+      addToBasket,
+      decreaseQuantity,
+      removeFromBasket,
+      clearBasket,
+      totalPrice,
+      totalCount,
+    }}>
       {children}
     </BasketContext.Provider>
   )

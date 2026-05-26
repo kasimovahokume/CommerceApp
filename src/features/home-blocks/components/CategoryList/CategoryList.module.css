@@ -1,0 +1,115 @@
+/* Pills */
+.pillsWrapper {
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+.pills {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 0 20px;
+}
+.pills::-webkit-scrollbar { display: none; }
+.pill {
+  flex-shrink: 0;
+  padding: 16px 24px;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  white-space: nowrap;
+  text-transform: capitalize;
+  transition: all 0.2s;
+}
+.pill:hover {
+  color: #111;
+  border-bottom-color: #111;
+}
+
+/* Section */
+.section {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 60px 32px;
+}
+.sectionTitle {
+  font-size: 32px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 24px;
+}
+
+/* Grid */
+.featuredGrid {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.cardLarge { flex: 2; }
+.cardSmall { flex: 1; }
+
+.smallGrid {
+  display: flex;
+  gap: 16px;
+}
+.smallGrid .card { flex: 1; }
+
+/* Kart */
+.card {
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s;
+}
+.card:hover { transform: translateY(-4px); }
+
+.cardLarge .cardImg { width: 100%; height: 380px; object-fit: cover; }
+.cardSmall .cardImg { width: 100%; height: 380px; object-fit: cover; }
+.smallGrid .cardImg  { width: 100%; height: 200px; object-fit: cover; }
+
+.cardBanner {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.cardNum {
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+.cardLabel {
+  font-size: 18px;
+  font-weight: 800;
+  flex: 1;
+  text-transform: capitalize;
+}
+.shopBtn {
+  background: transparent;
+  padding: 8px 18px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+.shopBtn:hover { background: rgba(255,255,255,0.2); }
+
+@media (max-width: 768px) {
+  .featuredGrid { flex-direction: column; }
+  .cardLarge, .cardSmall { flex: unset; }
+  .smallGrid { flex-wrap: wrap; }
+  .smallGrid .card { flex: 1 1 45%; }
+}

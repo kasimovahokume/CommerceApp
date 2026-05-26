@@ -1,0 +1,256 @@
+.page {
+  background: #fff;
+  min-height: 100vh;
+  padding: 28px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Geri düyməsi */
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  color: #6b7280;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 28px;
+  transition: color 0.2s;
+}
+.backBtn:hover { color: #111; }
+
+/* Əsas konteyner */
+.container {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* Sol — Qalereya */
+.gallery {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: sticky;
+  top: 90px;
+}
+
+.mainImgBox {
+  background: #f8f8f8;
+  border-radius: 16px;
+  height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow: hidden;
+}
+.mainImg {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+.mainImgBox:hover .mainImg { transform: scale(1.04); }
+
+/* Kiçik şəkillər */
+.thumbs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.thumb {
+  width: 72px;
+  height: 72px;
+  border-radius: 10px;
+  background: #f8f8f8;
+  border: 2px solid transparent;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  transition: border-color 0.2s;
+}
+.thumb img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.thumbActive {
+  border-color: #111;
+}
+
+/* Sağ — Məlumat */
+.details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.category {
+  font-size: 12px;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #111;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ratingNum {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+/* Qiymət */
+.priceBox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.price {
+  font-size: 32px;
+  font-weight: 800;
+  color: #111;
+}
+.discount {
+  background: #fee2e2;
+  color: #ef4444;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+/* Stok */
+.stockRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.stock {
+  font-size: 13px;
+  color: #10b981;
+  font-weight: 600;
+}
+
+/* Açıqlama */
+.desc {
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Info sətirləri */
+.infoRow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 14px;
+}
+.infoLabel {
+  color: #9ca3af;
+  min-width: 80px;
+}
+.infoValue {
+  color: #374151;
+  font-weight: 500;
+}
+
+/* Düymələr */
+.btnRow {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.addBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 16px 0;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.addBtn:hover   { background: #333; }
+.addBtn:disabled { background: #d1d5db; cursor: not-allowed; }
+
+.addedBtn {
+  background: #10b981 !important;
+}
+
+.heartBtn {
+  width: 52px;
+  height: 52px;
+  border-radius: 100px;
+  border: 2px solid #e5e7eb;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.2s;
+}
+.heartBtn:hover { border-color: #ef4444; }
+
+/* Səbətə get */
+.goBasketBtn {
+  background: transparent;
+  border: 2px solid #111;
+  color: #111;
+  padding: 12px 0;
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+}
+.goBasketBtn:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* Tapılmadı */
+.notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .container { flex-direction: column; }
+  .gallery   { position: static; }
+  .mainImgBox { height: 300px; }
+  .page      { padding: 20px 16px; }
+}
